@@ -1,0 +1,16 @@
+version: '2'
+services:
+  minio:
+    restart: always
+    image: minio/minio
+    container_name: minio
+    expose:
+      - "9000"
+    ports:
+      - "9000:9000"
+    volumes:
+      - ./data/minio:/data
+      - ./services/minio/config:/root/.minio
+    command: server /data
+    environment:
+      - TZ=Asia/Shanghai

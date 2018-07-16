@@ -1,0 +1,17 @@
+version: '2'
+services:
+  gogs:
+    restart: always
+    image: gogs/gogs
+    container_name: gogs
+    expose:
+      - "22"
+      - "3000"
+    ports:
+      - "10022:22"
+      - "10080:3000"
+    volumes:
+      - ./data/gogs:/data
+    environment:
+      - TZ=Asia/Shanghai
+

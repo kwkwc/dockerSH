@@ -1,0 +1,10 @@
+version: '2'
+services:
+  mongo:
+    restart: always
+    image: mongo
+    container_name: mongo
+    expose:
+      - "27017"
+    volumes:
+      - ./data/mongodb:/data/db
