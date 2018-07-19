@@ -30,6 +30,7 @@ fi
 # Ubuntu 16.04
 if [ "$DISTRO" = "Ubuntu" ]
 then
+    :
     # 备份源
     # $SUDO mv /etc/apt/sources.list /etc/apt/sources.list.bak$(date -d "today" +"%Y%m%d_%H%M%S")
 
