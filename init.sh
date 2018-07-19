@@ -57,6 +57,10 @@ EOF
 $SUDO systemctl daemon-reload && $SUDO systemctl restart docker
 
 # 安装 pip
+if [ "$PM" = "yum" ]
+then
+    $PM -y install epel-release
+fi
 $SUDO $PM -y install python-pip && $SUDO pip install --upgrade pip
 
 # 安装 docker-compose
