@@ -1,4 +1,4 @@
-# DockerSH v1.0.0
+# DockerSH v1.0.1
 
 > DockerSH is a shell about docker manage
 
@@ -29,13 +29,13 @@
         └── docker-compose.yml
 ```
 
-### Deploy docker (Ubuntu 16.04)
-`sudo chmod +x deploy.sh && ./deploy.sh`
+### Deploy docker
+`chmod +x deploy.sh && ./deploy.sh`
 
 ----------------------------------
 
 ### Add run permissions
-`sudo chmod +x dockerSH`
+`chmod +x dockerSH`
 
 ### Help information
 `./dockerSH -h`
