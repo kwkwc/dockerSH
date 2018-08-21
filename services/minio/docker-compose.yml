@@ -9,7 +9,7 @@ services:
     ports:
       - "9000:9000"
     volumes:
-      - ./data/minio:/data
+      - ../data/minio:/data
       - ./services/minio/config:/root/.minio
     command: server /data
     environment:

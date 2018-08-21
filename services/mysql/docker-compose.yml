@@ -2,13 +2,13 @@ version: '2'
 services:
   mysql:
     restart: always
-    image: mysql
+    image: mysql:5.7.21
     container_name: mysql
     command: --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci
     expose:
       - "3306"
     volumes:
-      - ./data/mysql:/var/lib/mysql
+      - ../data/mysql:/var/lib/mysql
       - ./services/mysql/conf.d/my.cnf:/etc/mysql/conf.d/my.cnf
     environment:
       - MYSQL_ROOT_PASSWORD=123456

@@ -9,9 +9,9 @@ services:
       - "3000"
     ports:
       - "10022:22"
-      - "10080:3000"
+      - "3000:3000"
     volumes:
-      - ./data/gogs:/data
+      - ../data/gogs:/data
     environment:
       - TZ=Asia/Shanghai
 

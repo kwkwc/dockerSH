@@ -9,4 +9,4 @@ services:
     ports:
       - "5000:5000"
     volumes:
-      - ./data/registry:/var/lib/registry
+      - ../data/registry:/var/lib/registry
