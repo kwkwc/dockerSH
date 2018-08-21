@@ -1,0 +1,8 @@
+version: '2'
+services:
+  graylog-mongo:
+    restart: always
+    image: mongo:3.6.4
+    container_name: graylog-mongo
+    volumes:
+      - ../data/graylog-mongo:/data/db

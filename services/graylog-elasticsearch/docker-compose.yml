@@ -1,0 +1,19 @@
+version: '2'
+services:
+  graylog-elasticsearch:
+    restart: always
+    image: elasticsearch:5.6.9
+    container_name: graylog-elasticsearch
+    volumes:
+      - ../data/graylog-elasticsearch:/usr/share/elasticsearch/data
+    environment:
+      - http.host=0.0.0.0
+      - transport.host=localhost
+      - network.host=0.0.0.0
+      - xpack.security.enabled=false
+      - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
+    ulimits:
+      memlock:
+        soft: -1
+        hard: -1
+    mem_limit: 1g

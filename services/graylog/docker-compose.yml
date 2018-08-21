@@ -1,0 +1,35 @@
+version: '2'
+services:
+  graylog:
+    restart: always
+    image: graylog/graylog:2.4.5-2
+    container_name: graylog
+    volumes:
+      - ./services/graylog/config:/usr/share/graylog/data/config
+      - ../data/graylog:/usr/share/graylog/data/journal
+    environment:
+      # CHANGE ME!
+      - GRAYLOG_PASSWORD_SECRET=gr8r3hbnvfs73b8wefhweufpokdnc
+      # Username
+      - GRAYLOG_ROOT_USERNAME=admin
+      # Password: admin
+      # echo -n yourpassword | shasum -a 256
+      - GRAYLOG_ROOT_PASSWORD_SHA2=8c6976e5b5410415bde908bd4dee15dfb167a9c873fc4bb8a81f6f2ab448a918
+      - GRAYLOG_ELASTICSEARCH_HOSTS=http://graylog-elasticsearch:9200
+      - GRAYLOG_MONGODB_URI=mongodb://graylog-mongo/graylog
+      - GRAYLOG_ROOT_TIMEZONE=Asia/Shanghai
+      # Your IP
+      - GRAYLOG_WEB_ENDPOINT_URI=http://x.x.x.x:9000/api
+      - GRAYLOG_WEB_LISTEN_URI=http://0.0.0.0:9000/
+      - GRAYLOG_REST_LISTEN_URI=http://0.0.0.0:9000/api
+    ports:
+      # Graylog web interface and REST API
+      - 9000:9000
+      # Syslog TCP
+      - 514:514
+      # Syslog UDP
+      - 514:514/udp
+      # GELF TCP
+      - 12201:12201
+      # GELF UDP
+      - 12201:12201/udp
