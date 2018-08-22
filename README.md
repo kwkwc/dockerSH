@@ -29,19 +29,18 @@
         └── docker-compose.yml
 ```
 
-### Deploy docker
-`chmod +x deploy.sh && ./deploy.sh`
+### Usage
+```
+# Deploy docker(Install docker, modify docker source, install pip, install docker-compose)
+# This step is not necessary, consider whether you need to run
+`./deploy.sh`
 
-----------------------------------
+# Help information
+./dockerSH -h
 
-### Add run permissions
-`chmod +x dockerSH`
+# Up redis
+./dockerSH up redis
 
-### Help information
-`./dockerSH -h`
-
-### up redis
-`./dockerSH up redis`
-
-### down redis
-`./dockerSH down redis`
+# Down redis
+./dockerSH down redis
+```
