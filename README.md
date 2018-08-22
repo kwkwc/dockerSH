@@ -33,7 +33,7 @@
 ```
 # Deploy docker(Install docker, modify docker source, install pip, install docker-compose)
 # This step is not necessary, consider whether you need to run
-`./deploy.sh`
+./deploy.sh
 
 # Help information
 ./dockerSH -h
@@ -43,4 +43,7 @@
 
 # Down redis
 ./dockerSH down redis
+
+# Reup redis
+./dockerSH reup redis
 ```
