@@ -24,10 +24,10 @@ help_info()
     echo -e "Program:"
     echo -e "\t$0 is a shell about docker manage"
     echo -e "Version:"
-    echo -e "\t1.0.1"
+    echo -e "\t1.0.2"
     echo -e "History:"
     echo -e "\tCreated on 2018/07/16"
-    echo -e "\tLast modified on 2018/07/19"
+    echo -e "\tLast modified on 2019/10/13"
     echo -e "Author:"
     echo -e "\tkwkw"
     echo -e "Commands:"
@@ -127,10 +127,10 @@ case "$1" in
       $SUDO docker stop "$option" && $SUDO docker rm "$option" && up_common_start
       ;;
   "ps" )
-      $SUDO docker ps -a
+      $SUDO docker ps
       ;;
   "psall" )
-      $SUDO docker ps
+      $SUDO docker ps -a
       ;;
   "start" )
       $SUDO docker start "$option"
