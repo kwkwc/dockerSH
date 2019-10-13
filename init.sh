@@ -3,10 +3,10 @@
 # Program:
 #      初始化
 # Version:
-#      1.0.1
+#      1.0.2
 # History:
 #      Created on 2018/07/16
-#      Last modified on 2018/07/19
+#      Last modified on 2019/10/13
 # Author:
 #      kwkw
 
@@ -51,7 +51,7 @@ $SUDO $PM -y install curl && $SUDO curl -fsSL https://get.docker.com/ | sh
 $SUDO mkdir -p /etc/docker
 $SUDO tee /etc/docker/daemon.json <<-'EOF'
 {
-  "registry-mirrors": ["https://docker.mirrors.ustc.edu.cn"]
+  "registry-mirrors": ["https://hub-mirror.c.163.com/","https://docker.mirrors.ustc.edu.cn/"]
 }
 EOF
 $SUDO systemctl daemon-reload && $SUDO systemctl restart docker
