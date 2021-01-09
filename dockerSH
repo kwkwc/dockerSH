@@ -48,7 +48,7 @@ help_info()
     echo -e "\tdownall \tdocker stop \`docker ps -a -q\` && docker rm \`docker ps -a -q\`"
     echo -e "\timages \t\tdocker images"
     echo -e "\trmi \t\tdocker rmi image"
-    echo -e "\trmiall \t\tdocker rmi \`docker images\`"
+    echo -e "\trmiall \t\tdocker rmi \`docker images -q\`"
     echo -e "\thelp | -h \tHelp info"
     echo -e "Options:"
     echo -e "\tx, --xxx \tName of container (command: up)"
@@ -177,7 +177,7 @@ case "$1" in
       ;;
   "rmiall" )
       y_or_n_three_times
-      $SUDO docker rmi `$SUDO docker images`
+      $SUDO docker rmi `$SUDO docker images -q`
       ;;
   "help" | "-h" )
       help_info
