@@ -6,6 +6,7 @@
 ```
 ├── deploy.sh
 ├── dockerSH
+├── dockerSH-completion.bash
 ├── init.sh
 ├── README.md
 └── services
@@ -21,7 +22,7 @@
 git clone https://github.com/kwkwc/dockerSH.git
 
 # Working directory
-cd dockersh
+cd dockerSH
 
 # This step is not necessary, consider whether you need to run
 # Deploy docker(Install docker, install pip, install docker-compose)
@@ -38,4 +39,13 @@ cd dockersh
 
 # Reup containerA
 ./dockerSH reup containerA
+```
+
+### Commands auto-complement
+```
+# Temporary setting
+source dockerSH-completion.bash
+
+# Permanent setting
+cp dockerSH-completion.bash /etc/bash_completion.d/
 ```
