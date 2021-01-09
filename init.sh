@@ -31,14 +31,14 @@ fi
 # $SUDO $PM -y install docker-ce
 $SUDO $PM -y install curl && $SUDO curl -fsSL https://get.docker.com/ | sh
 
-# 修改 docker 镜像仓库
-$SUDO mkdir -p /etc/docker
-$SUDO tee /etc/docker/daemon.json <<-'EOF'
-{
-  "registry-mirrors": ["https://hub-mirror.c.163.com/","https://docker.mirrors.ustc.edu.cn/"]
-}
-EOF
-$SUDO systemctl daemon-reload && $SUDO systemctl restart docker
+#  修改 docker 镜像仓库
+# $SUDO mkdir -p /etc/docker
+# $SUDO tee /etc/docker/daemon.json <<-'EOF'
+# {
+#   "registry-mirrors": ["https://hub-mirror.c.163.com/","https://docker.mirrors.ustc.edu.cn/"]
+# }
+# EOF
+# $SUDO systemctl daemon-reload && $SUDO systemctl restart docker
 
 # 安装 pip
 if [ "$PM" = "yum" ]
