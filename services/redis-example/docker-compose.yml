@@ -1,0 +1,9 @@
+version: '2'
+services:
+  redis-example:
+    restart: always
+    image: redis:6.0.9
+    container_name: redis-example
+    command: --requirepass "12345678"
+    expose:
+      - "6379"
