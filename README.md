@@ -1,4 +1,4 @@
-# DockerSH v1.0.2
+# DockerSH v1.0.3
 
 > DockerSH is a shell about docker manage
 
@@ -9,41 +9,33 @@
 ├── init.sh
 ├── README.md
 └── services
-    ├── gogs
+    ├── containerA
     │   └── docker-compose.yml
-    ├── minio
-    │   ├── config
-    │   │   └── config.json
-    │   └── docker-compose.yml
-    ├── mongo
-    │   └── docker-compose.yml
-    ├── mysql
-    │   ├── conf.d
-    │   │   └── my.cnf
-    │   └── docker-compose.yml
-    ├── phpmyadmin
-    │   └── docker-compose.yml
-    ├── redis
-    │   └── docker-compose.yml
-    └── registry
+    └── containerB
         └── docker-compose.yml
 ```
 
 ### Usage
 ```
-# Deploy docker(Install docker, modify docker source, install pip, install docker-compose)
+# Install
+git clone https://github.com/kwkwc/dockerSH.git
+
+# Working directory
+cd dockersh
+
 # This step is not necessary, consider whether you need to run
+# Deploy docker(Install docker, install pip, install docker-compose)
 ./deploy.sh
 
 # Help information
 ./dockerSH -h
 
-# Up redis
-./dockerSH up redis
+# Up containerA
+./dockerSH up containerA
 
-# Down redis
-./dockerSH down redis
+# Down containerA
+./dockerSH down containerA
 
-# Reup redis
-./dockerSH reup redis
+# Reup containerA
+./dockerSH reup containerA
 ```
