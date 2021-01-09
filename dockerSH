@@ -20,14 +20,14 @@ fi
 help_info()
 {
     echo -e "Name:"
-    echo -e "\t$0"
+    echo -e "\tDockerSH"
     echo -e "Program:"
-    echo -e "\t$0 is a shell about docker manage"
+    echo -e "\tDockerSH is a shell about docker manage"
     echo -e "Version:"
-    echo -e "\t1.0.2"
+    echo -e "\t1.0.3"
     echo -e "History:"
     echo -e "\tCreated on 2018/07/16"
-    echo -e "\tLast modified on 2019/10/13"
+    echo -e "\tLast modified on 2021/01/09"
     echo -e "Author:"
     echo -e "\tkwkw"
     echo -e "Commands:"
@@ -49,10 +49,6 @@ help_info()
     echo -e "\timages \t\tdocker images"
     echo -e "\trmi \t\tdocker rmi image"
     echo -e "\trmiall \t\tdocker rmi \`docker images\`"
-    echo -e "\tcleanfile \tClean yml tmp file"
-    echo -e "\tcleandata \tClean data folder"
-    echo -e "\tcleanlogs \tClean logs folder"
-    echo -e "\tcleanall \tClean all"
     echo -e "\thelp | -h \tHelp info"
     echo -e "Options:"
     echo -e "\tx, --xxx \tName of container (command: up)"
@@ -103,6 +99,13 @@ y_or_n()
     fi
 }
 
+y_or_n_three_times()
+{
+    y_or_n
+    y_or_n
+    y_or_n
+}
+
 if [ $# -gt 2 ]
 then
     echo -e "Too many parameters\n"
@@ -121,9 +124,7 @@ case "$1" in
       up_common_start
       ;;
   "reup" )
-      y_or_n
-      y_or_n
-      y_or_n
+      y_or_n_three_times
       $SUDO docker stop "$option" && $SUDO docker rm "$option" && up_common_start
       ;;
   "ps" )
@@ -154,69 +155,31 @@ case "$1" in
       $SUDO docker logs -f "$option"
       ;;
   "rm" )
-      y_or_n
-      y_or_n
-      y_or_n
+      y_or_n_three_times
       $SUDO docker rm "$option"
       ;;
   "rmall" )
-      y_or_n
-      y_or_n
-      y_or_n
+      y_or_n_three_times
       $SUDO docker rm `$SUDO docker ps -a -q`
       ;;
   "down" )
-      y_or_n
-      y_or_n
-      y_or_n
+      y_or_n_three_times
       $SUDO docker stop "$option" && $SUDO docker rm "$option"
       ;;
   "downall" )
-      y_or_n
-      y_or_n
-      y_or_n
+      y_or_n_three_times
       $SUDO docker stop `$SUDO docker ps -a -q` && $SUDO docker rm `$SUDO docker ps -a -q`
       ;;
   "images" )
       $SUDO docker images
       ;;
   "rmi" )
-      y_or_n
-      y_or_n
-      y_or_n
+      y_or_n_three_times
       $SUDO docker rmi "$option"
       ;;
   "rmiall" )
-      y_or_n
-      y_or_n
-      y_or_n
+      y_or_n_three_times
       $SUDO docker rmi `$SUDO docker images`
-      ;;
-  "cleanfile" )
-      y_or_n
-      y_or_n
-      y_or_n
-      rm -rf $WORKPATH/docker-compose.yml
-      ;;
-  "cleandata" )
-      y_or_n
-      y_or_n
-      y_or_n
-      $SUDO rm -rf ../data/*
-      ;;
-  "cleanlogs" )
-      y_or_n
-      y_or_n
-      y_or_n
-      $SUDO rm -rf ../logs/*
-      ;;
-  "cleanall" )
-      y_or_n
-      y_or_n
-      y_or_n
-      rm -rf $WORKPATH/docker-compose.yml
-      $SUDO rm -rf ../data/*
-      $SUDO rm -rf ../logs/*
       ;;
   "help" | "-h" )
       help_info
