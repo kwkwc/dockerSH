@@ -8,6 +8,7 @@
 ├── dockerSH
 ├── dockerSH-completion.bash
 ├── init.sh
+├── tools.sh
 ├── README.md
 └── services
     ├── containerA
