@@ -3,23 +3,20 @@
 # Program:
 #      工具
 # Version:
-#      1.0.0
+#      1.0.1
 # History:
 #      Created on 2018/07/19
-#      Last modified on 2018/07/19
+#      Last modified on 2021/04/27
 # Author:
 #      kwkw
 
-Get_Dist_Name()
+get_dist_name()
 {
-    if grep -Eqii "CentOS" /etc/issue || grep -Eq "CentOS" /etc/*-release; then
-        DISTRO='CentOS'
-        PM='yum'
-    elif grep -Eqi "Red Hat Enterprise Linux Server" /etc/issue || grep -Eq "Red Hat Enterprise Linux Server" /etc/*-release; then
+    if grep -Eqi "Red Hat Enterprise Linux Server" /etc/issue || grep -Eq "Red Hat Enterprise Linux Server" /etc/*-release; then
         DISTRO='RHEL'
         PM='yum'
-    elif grep -Eqi "Aliyun" /etc/issue || grep -Eq "Aliyun" /etc/*-release; then
-        DISTRO='Aliyun'
+    elif grep -Eqi "CentOS" /etc/issue || grep -Eq "CentOS" /etc/*-release; then
+        DISTRO='CentOS'
         PM='yum'
     elif grep -Eqi "Fedora" /etc/issue || grep -Eq "Fedora" /etc/*-release; then
         DISTRO='Fedora'
@@ -33,9 +30,13 @@ Get_Dist_Name()
     elif grep -Eqi "Raspbian" /etc/issue || grep -Eq "Raspbian" /etc/*-release; then
         DISTRO='Raspbian'
         PM='apt'
+    elif grep -Eqi "SUSE" /etc/issue || grep -Eq "SUSE" /etc/*-release; then
+        DISTRO='openSUSE'
+        PM='zypper'
     else
         DISTRO='unknow'
+        PM='unknow'
     fi
 }
 
-Get_Dist_Name
+get_dist_name
