@@ -55,6 +55,7 @@ Usage:
     Options:
             x, --xxx        Name of container (command: up)
 EOF
+    exit 1
 }
 
 up_one()
@@ -116,7 +117,6 @@ then
 elif [ $# -lt 1 ]
 then
     help_info
-    exit 0
 fi
 
 option="$2"
