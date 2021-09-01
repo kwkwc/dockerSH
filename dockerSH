@@ -49,7 +49,7 @@ Usage:
             down            docker stop {{container}} && docker rm {{container}}
             downall         docker stop \`docker ps -a -q\` && docker rm \`docker ps -a -q\`
             images          docker images
-            rmi             docker rmi image
+            rmi             docker rmi {{image}}
             rmiall          docker rmi \`docker images -q\`
             help | -h       Help info
     Options:
