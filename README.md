@@ -1,6 +1,6 @@
 # DockerSH v1.0.3
 
-> DockerSH is a shell about docker manage
+> DockerSH is a shell about docker management
 
 [简体中文](README.zh-CN.md)
 

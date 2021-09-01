@@ -19,39 +19,42 @@ fi
 
 help_info()
 {
-    echo -e "Name:"
-    echo -e "        DockerSH"
-    echo -e "Program:"
-    echo -e "        DockerSH is a shell about docker manage"
-    echo -e "Version:"
-    echo -e "        1.0.3"
-    echo -e "History:"
-    echo -e "        Created on 2018/07/16"
-    echo -e "        Last modified on 2021/01/10"
-    echo -e "Author:"
-    echo -e "        kwkw"
-    echo -e "Commands:"
-    echo -e "        up              Up the container"
-    echo -e "        reup            docker stop container && docker rm container && up"
-    echo -e "        ps              docker ps"
-    echo -e "        psall           docker ps -a"
-    echo -e "        start           docker start container"
-    echo -e "        startall        docker start \`docker ps -a -q\`"
-    echo -e "        stop            docker stop container"
-    echo -e "        stopall         docker stop \`docker ps -a -q\`"
-    echo -e "        restart         docker stop container && docker start container"
-    echo -e "        restartall      docker stop \`docker ps -a -q\` && docker start \`docker ps -a -q\`"
-    echo -e "        logs            docker logs -f container"
-    echo -e "        rm              docker rm container"
-    echo -e "        rmall           docker rm \`docker ps -a -q\`"
-    echo -e "        down            docker stop container && docker rm container"
-    echo -e "        downall         docker stop \`docker ps -a -q\` && docker rm \`docker ps -a -q\`"
-    echo -e "        images          docker images"
-    echo -e "        rmi             docker rmi image"
-    echo -e "        rmiall          docker rmi \`docker images -q\`"
-    echo -e "        help | -h       Help info"
-    echo -e "Options:"
-    echo -e "        x, --xxx \tName of container (command: up)"
+    cat << EOF >&2
+Usage:
+    Name:
+            DockerSH
+    Program:
+            DockerSH is a shell about docker management
+    Version:
+            1.0.3
+    History:
+            Created on 2018/07/16
+            Last modified on 2021/09/01
+    Author:
+            kwkw
+    Commands:
+            up              Up the {{container}}
+            reup            docker stop {{container}} && docker rm {{container}} && up
+            ps              docker ps
+            psall           docker ps -a
+            start           docker start {{container}}
+            startall        docker start \`docker ps -a -q\`
+            stop            docker stop {{container}}
+            stopall         docker stop \`docker ps -a -q\`
+            restart         docker stop {{container}} && docker start {{container}}
+            restartall      docker stop \`docker ps -a -q\` && docker start \`docker ps -a -q\`
+            logs            docker logs -f {{container}}
+            rm              docker rm {{container}}
+            rmall           docker rm \`docker ps -a -q\`
+            down            docker stop {{container}} && docker rm {{container}}
+            downall         docker stop \`docker ps -a -q\` && docker rm \`docker ps -a -q\`
+            images          docker images
+            rmi             docker rmi image
+            rmiall          docker rmi \`docker images -q\`
+            help | -h       Help info
+    Options:
+            x, --xxx        Name of container (command: up)
+EOF
 }
 
 up_one()
