@@ -1,4 +1,4 @@
-# DockerSH v1.0.3
+# DockerSH v1.0.4
 
 > DockerSH is a shell about docker management
 
@@ -6,10 +6,9 @@
 
 ### Framework
 ```bash
-├── deploy.sh
 ├── dockerSH
 ├── dockerSH-completion.bash
-├── init.sh
+├── install.sh
 ├── tools.sh
 ├── README.md
 └── services
@@ -28,8 +27,8 @@ git clone https://github.com/kwkwc/dockerSH.git
 cd dockerSH
 
 # This step is not necessary, consider whether you need to run
-# Deploy docker(Install docker, install pip, install docker-compose)
-./deploy.sh
+# Deploy docker(Install docker, install python3, install pip3, install docker-compose)
+./install.sh
 
 # Help information
 ./dockerSH -h

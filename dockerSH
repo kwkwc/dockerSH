@@ -3,12 +3,7 @@
 . ./tools.sh
 
 # Set sudo
-if [ "$PM" = "apt" ]
-then
-    SUDO="sudo"
-else
-    SUDO=""
-fi
+SUDO="sudo"
 
 WORKPATH=$PWD
 
@@ -26,10 +21,10 @@ Usage:
     Program:
             DockerSH is a shell about docker management
     Version:
-            1.0.3
+            1.0.4
     History:
             Created on 2018/07/16
-            Last modified on 2021/09/01
+            Last modified on 2021/09/02
     Author:
             kwkw
     Commands:

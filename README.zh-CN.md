@@ -1,4 +1,4 @@
-# DockerSH v1.0.3
+# DockerSH v1.0.4
 
 > DockerSH 是一个 Shell 实现的 Docker 管理工具
 
@@ -6,10 +6,9 @@
 
 ### 架构
 ```bash
-├── deploy.sh
 ├── dockerSH
 ├── dockerSH-completion.bash
-├── init.sh
+├── install.sh
 ├── tools.sh
 ├── README.md
 └── services
@@ -28,8 +27,8 @@ git clone https://github.com/kwkwc/dockerSH.git
 cd dockerSH
 
 # 此步骤非必需，请考虑是否需要运行
-# 部署 Docker(安装 docker, 安装 pip, 安装 docker-compose)
-./deploy.sh
+# 部署 Docker(安装 docker, 安装 python3, 安装 pip3, 安装 docker-compose)
+./install.sh
 
 # 帮助信息
 ./dockerSH -h
