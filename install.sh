@@ -3,10 +3,10 @@
 # Program:
 #      Install
 # Version:
-#      1.0.6
+#      1.0.7
 # History:
 #      Created on 2018/07/16
-#      Last modified on 2021/10/09
+#      Last modified on 2023/09/05
 # Author:
 #      kwkw
 
@@ -40,18 +40,6 @@ then
     echo_log "Install epel-release..."
     $SUDO $PM -y install epel-release
 fi
-
-echo_log "Install python3..."
-$SUDO $PM -y install python3
-
-echo_log "Install pip3..."
-$SUDO $PM -y install python3-pip && $SUDO pip3 install --upgrade pip
-
-echo_log "Install docker-compose..."
-$SUDO pip3 install docker-compose
-
-echo_log "Setting up docker-compose soft links"
-$SUDO ln -s `which docker-compose` /usr/bin/docker-compose
 
 echo_log "Install bash-completion..."
 $SUDO $PM -y install bash-completion

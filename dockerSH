@@ -21,10 +21,10 @@ Usage:
     Program:
             DockerSH is a shell about docker management
     Version:
-            1.0.4
+            1.1.0
     History:
             Created on 2018/07/16
-            Last modified on 2021/09/02
+            Last modified on 2023/09/05
     Author:
             kwkw
     Commands:
@@ -63,7 +63,7 @@ up_one()
         cat ./$option/docker-compose.yml > $DOCKER_COMPOSE_YML_PATH
         echo -e "$option will be up"
         cd $WORKPATH
-        $SUDO docker-compose up -d
+        $SUDO docker compose up -d
         exit 0
     fi
 
