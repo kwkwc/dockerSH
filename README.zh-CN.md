@@ -2,7 +2,7 @@
 
 > DockerSH 是一个 Shell 实现的 Docker 管理工具
 
-[English](README.md)
+[English](README.md) | 简体中文
 
 ### 架构
 ```bash
