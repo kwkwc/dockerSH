@@ -1,0 +1,13 @@
+version: '3'
+services:
+  mysql:
+    restart: always
+    image: mysql:latest
+    container_name: mysql
+    volumes:
+      - ../data/mysql:/var/lib/mysql
+    environment:
+      - MYSQL_DATABASE=db
+      - MYSQL_ROOT_PASSWORD=12345678
+    expose:
+      - "3306"

@@ -1,4 +1,4 @@
-# DockerSH v1.1.0
+# DockerSH v1.2.0
 
 > DockerSH is a shell about docker management
 

@@ -1,4 +1,4 @@
-# DockerSH v1.1.0
+# DockerSH v1.2.0
 
 > DockerSH 是一个 Shell 实现的 Docker 管理工具
 
